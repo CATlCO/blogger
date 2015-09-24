@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-
+	before_filter :require_login, only: [:new, :create, :edit, :update]
 	def index
 		@articles=Article.all
 	end
